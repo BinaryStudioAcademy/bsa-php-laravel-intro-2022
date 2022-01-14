@@ -88,12 +88,12 @@ _**Вашей задачей будет разработать свою сист
 ```
 cp .env.example .env
 cp .env.testing.example .env.testing
-docker-compose up -d
+cp docker-compose.override.yml.example .docker-compose.override.yml
+docker-compose up -d --build
 docker-compose exec app php artisan migrate
 docker-compose exec app php artisan db:seed
 docker-compose exec app ./vendor/bin/phpunit
 ```
-
 
 ### Критерии оценки
 

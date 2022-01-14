@@ -15,14 +15,4 @@ use Illuminate\Support\Str;
 |
 */
 
-Route::get('/', function () {
-    $data = [
-        'level' => 'info',
-        'driver' => 'default',
-        'message' => Str::random(16),
-        'trace' => Str::random(128),
-        'channel' => 'default',
-    ];
-
-    Log::insert($data);
-});
+Route::get('/', function () {});
