@@ -1,0 +1,28 @@
+<?php
+
+use App\Models\Log;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    $data = [
+        'level' => 'info',
+        'driver' => 'default',
+        'message' => Str::random(16),
+        'trace' => Str::random(128),
+        'channel' => 'default',
+    ];
+
+    Log::insert($data);
+});
